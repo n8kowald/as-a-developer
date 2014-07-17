@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>As a developer</title>
+	<link href="popup.css" rel="stylesheet" media="all">
+	<script src="jquery-1.7.2.min.js"></script>
+	<script src="popup.js"></script>
+</head>
+<body>
+<div class="tp-actions">
+	<div class="quick-actions">
+		<ul>
+			<!-- TODO: Show/hide based on context -->
+			<li><a href="#" id="aad" title="Hide noise"><span>Remove noise</span></a></li>
+			<li><a href="#" id="fullscreen" title="Fullscreen ticket"><span>Fullscreen ticket</span></a></li>
+			<li><a href="#" id="add-title" title="Add story title"><span>Add story title</span></a></li>
+		</ul>
+	</div>
+	<div class="numpad-holder">
+		<div class="numpad-title">
+			<h2>Jump to ticket</h2>
+		</div>
+		<div class="numpad">
+			<ul>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><a href="#">9</a></li>					
+				<li><a href="#">0</a></li>					
+			</ul>
+			<br class="clear-both">
+		</div>
+		<div class="numpad-entry">
+			<input type="text" id="numpad-text-entry" maxlength="6">
+			<a href="#" class="numpad-delete">Delete</a>
+			<br class="clear-both">
+		</div>
+		<div class="numpad-action">
+			<a href="#" class="numpad-submit">GO</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
