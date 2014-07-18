@@ -7,6 +7,7 @@
 var TP = (function($) {
 
     var module = {};
+    var tpDomain = 'https://elevate.tpondemand.com/';
     
     module.removeNoise = function() {
         $('.tau-board-unit__value').text(function() { 
@@ -19,7 +20,7 @@ var TP = (function($) {
         var id=$('.ui-title__info .entity-id a').text(); 
         if (id.length) {
             id=id.replace('#', '');
-            tpUrl = 'https://thinkfinance.tpondemand.com/entity/' + id
+            tpUrl = tpDomain + id
             window.location = tpUrl;
         }
     };
@@ -33,7 +34,7 @@ var TP = (function($) {
             card$.simulate('dblclick');
         } else {
             // Card not found: go to ticket directly
-            window.location = 'http://thinkfinance.tpondemand.com/entity/' + tpid;
+            window.location = tpDomain + tpid;
         }
     };
     
