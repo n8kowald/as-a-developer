@@ -1,6 +1,6 @@
 {
     "name": "As a developer",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "manifest_version": 2,
     "description": "TargetProcess. Enhanced. Grab the magic mouse and let's Scrum!",
     "browser_action": { 
