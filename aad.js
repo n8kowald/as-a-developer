@@ -6,8 +6,9 @@
 
 var TP = (function($) {
 
-    var module = {};
-    var tpDomain = 'https://elevate.tpondemand.com/';
+    var module = {},
+        tpDomain = 'https://elevate.tpondemand.com/',
+        tpTicketBase = tpDomain + 'entity/';
     
     module.removeNoise = function() {
         $('.tau-board-unit__value').text(function() { 
@@ -20,7 +21,7 @@ var TP = (function($) {
         var id=$('.ui-title__info .entity-id a').text(); 
         if (id.length) {
             id=id.replace('#', '');
-            tpUrl = tpDomain + id
+            tpUrl = tpTicketBase +  id
             window.location = tpUrl;
         }
     };
@@ -34,7 +35,7 @@ var TP = (function($) {
             card$.simulate('dblclick');
         } else {
             // Card not found: go to ticket directly
-            window.location = tpDomain + tpid;
+            window.location = tpTicketBase + tpid;
         }
     };
     
