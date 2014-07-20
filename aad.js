@@ -12,7 +12,7 @@ var TP = (function($) {
     
     module.removeNoise = function() {
         $('.tau-board-unit__value').text(function() { 
-            return $(this).text().replace(/(as a .+ I .+? to)/gi, '');
+            return $(this).text().replace(/(as a .+? I .+? to)/gi, '');
         });
     };
     
@@ -43,7 +43,9 @@ var TP = (function($) {
     module.createStoryTitle = function() {
         var storyTitleInput$ = $('.tau-in-text.Name');
         if (storyTitleInput$.length) {
-            storyTitleInput$.val('As a % I want to % so that %');
+            storyTitleInput$.val(
+                'As a %role%, I want %goal or need%, so that %benefit%'
+            );
         }
     };
     
