@@ -9,3 +9,4 @@ TODO
  * Put third-party code into a libs/ directory
  * Add CSS animations to hover state of icons
  * Show/hide icons based on context
+ * Create tests for aad functions
