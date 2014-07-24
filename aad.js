@@ -73,6 +73,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         case 'createStoryTitle':
             TP.createStoryTitle();
             break;
+		
+		default:
     }
     
     return true;
