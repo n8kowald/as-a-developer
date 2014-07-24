@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     var numEntry$ = $('#numpad-text-entry'),
         submit$ = $('.numpad-submit'),
-		delete$ = $('.numpad-delete'),
+        delete$ = $('.numpad-delete'),
         tpIdLength = 6;
     
     $('.numpad a').on('click', function() {
@@ -27,56 +27,57 @@ $(document).ready(function() {
     $('#numpad-text-entry').on('keyup', function() {
         setActiveState();
     });
- 	
-	// Enable keyboard input actions
-	$(document).on('keypress', function(e) {
-		
-		// 0 pressed
-		if (e.which === 48 || e.which === 96) {
-			$('.numpad-0').trigger('click');
-		}
-		// 1 pressed
-		if (e.which === 49 || e.which === 97) {
-			$('.numpad-1').trigger('click');
-		}
-		// 2 pressed
-		if (e.which === 50 || e.which === 99) {
-			$('.numpad-2').trigger('click');
-		}
-		// 3 pressed
-		if (e.which === 51 || e.which === 99) {
-			$('.numpad-3').trigger('click');
-		}
-		// 4 pressed
-		if (e.which === 52 || e.which === 100) {
-			$('.numpad-4').trigger('click');
-		}
-		// 5 pressed
-		if (e.which === 53 || e.which === 101) {
-			$('.numpad-5').trigger('click');
-		}
-		// 6 pressed
-		if (e.which === 54 || e.which === 102) {
-			$('.numpad-6').trigger('click');
-		}
-		// 7 pressed
-		if (e.which === 55 || e.which === 103) {
-			$('.numpad-7').trigger('click');
-		}
-		// 8 pressed
-		if (e.which === 56 || e.which === 104) {
-			$('.numpad-8').trigger('click');
-		}
-		// 9 pressed
-		if (e.which === 57 || e.which === 105) {
-			$('.numpad-9').trigger('click');
-		}
+    
+    // Enable keyboard input actions
+    $(document).on('keypress', function(e) {
 
-		// Enter  opens a ticket
-		if (e.which == 13) {
+        // 0 pressed
+        if (e.which === 48 || e.which === 96) {
+            $('.numpad-0').trigger('click');
+        }
+        // 1 pressed
+        if (e.which === 49 || e.which === 97) {
+            $('.numpad-1').trigger('click');
+        }
+        // 2 pressed
+        if (e.which === 50 || e.which === 99) {
+            $('.numpad-2').trigger('click');
+        }
+        // 3 pressed
+        if (e.which === 51 || e.which === 99) {
+            $('.numpad-3').trigger('click');
+        }
+        // 4 pressed
+        if (e.which === 52 || e.which === 100) {
+            $('.numpad-4').trigger('click');
+        }
+        // 5 pressed
+        if (e.which === 53 || e.which === 101) {
+            $('.numpad-5').trigger('click');
+        }
+        // 6 pressed
+        if (e.which === 54 || e.which === 102) {
+            $('.numpad-6').trigger('click');
+        }
+        // 7 pressed
+        if (e.which === 55 || e.which === 103) {
+            $('.numpad-7').trigger('click');
+        }
+        // 8 pressed
+        if (e.which === 56 || e.which === 104) {
+            $('.numpad-8').trigger('click');
+        }
+        // 9 pressed
+        if (e.which === 57 || e.which === 105) {
+            $('.numpad-9').trigger('click');
+        }
+
+        // Enter  opens a ticket
+        if (e.which == 13) {
             submit$.trigger('click');
         }
-	});
+
+    });
 
     // Change the colour of the GO button to indicate a full TP id has been entered
     function setActiveState() {
@@ -87,14 +88,14 @@ $(document).ready(function() {
             submit$.removeClass('active');
         }
     }
-	
-	/* Send actions to background.js */
-	
-	submit$.on('click', function(e) {
+    
+    /* Send actions to background.js */
+    
+    submit$.on('click', function(e) {
         e.preventDefault();
         var id = numEntry$.val();
         if (id) {
-			chrome.runtime.sendMessage({method: 'openTicket', tpid: id});
+            chrome.runtime.sendMessage({method: 'openTicket', tpid: id});
         }
     });
     
@@ -106,12 +107,12 @@ $(document).ready(function() {
     
     $('#fullscreen').on('click', function(e) {
         e.preventDefault();
-		chrome.runtime.sendMessage({method: 'fullscreen'});
+        chrome.runtime.sendMessage({method: 'fullscreen'});
     });
     
     $('#add-title').on('click', function(e) {
         e.preventDefault();
-		chrome.runtime.sendMessage({method: 'createStoryTitle'});
+        chrome.runtime.sendMessage({method: 'createStoryTitle'});
     });
 
 });
