@@ -1,17 +1,17 @@
 {
     "name": "As a developer",
-    "version": "1.1.4",
+    "version": "1.2.0",
     "manifest_version": 2,
-    "description": "TargetProcess. Enhanced. Grab the magic mouse and let's Scrum!",
+    "description": "TargetProcess ticket numpad. Grab the magic mouse and let's Scrum!",
+    "options_page": "options.html",
     "browser_action": { 
-        "default_icon": "icons/aad.png",
+        "default_icon": "icons/icon16.png",
         "default_popup": "popup/popup.html"
     },
-    "permissions": ["tabs", "<all_urls>"],
-    "icons": {
-        "16": "icons/aad.png",
-        "48": "icons/aad.png",
-        "128": "icons/aad.png" 
+    "permissions": ["tabs", "<all_urls>", "storage"],
+    "icons": { "16": "icons/icon16.png",
+               "48": "icons/icon48.png",
+               "128": "icons/icon128.png"
     },
     "background": { 
         "scripts": ["background.js"]

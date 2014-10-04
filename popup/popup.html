@@ -3,8 +3,6 @@
 <head>
     <title>As a developer</title>
     <link href="popup.css" rel="stylesheet" media="all">
-    <script src="../lib/jquery-1.7.2.min.js"></script>
-    <script src="popup.js"></script>
 </head>
 <body>
 <div class="tp-actions">
@@ -12,8 +10,8 @@
         <ul>
             <!-- TODO: Show/hide based on context -->
             <li><a href="#" id="aad" title="Hide noise"><span>Remove noise</span></a></li>
-            <li><a href="#" id="fullscreen" title="Fullscreen ticket"><span>Fullscreen ticket</span></a></li>
             <li><a href="#" id="add-title" title="Add story title"><span>Add story title</span></a></li>
+            <li><a href="#" id="fullscreen" title="Fullscreen ticket"><span>Fullscreen ticket</span></a></li>
         </ul>
     </div>
     <div class="numpad-holder">
@@ -36,7 +34,7 @@
             <br class="clear-both">
         </div>
         <div class="numpad-entry">
-            <input type="text" id="numpad-text-entry" maxlength="6">
+            <input type="text" id="numpad-text-entry" maxlength="6" class="typeahead">
             <a href="#" class="numpad-delete">Delete</a>
             <br class="clear-both">
         </div>
@@ -45,5 +43,7 @@
         </div>
     </div>
 </div>
+<script src="../lib/jquery-1.7.2.min.js"></script>
+<script src="popup.js"></script>
 </body>
 </html>
