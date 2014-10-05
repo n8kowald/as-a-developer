@@ -1,8 +1,9 @@
+// Check TP url is saved
 chrome.storage.sync.get('tpUrl', function(items) {
 
-    // No TP url saved storage. Ask for it.
+    // No TP url saved in storage. Ask for it.
     if (!items.tpUrl) {
-        window.open('options.html', 'As a developer - options');
+        window.open('options.html', 'As a developer - Options');
     }
 });
 

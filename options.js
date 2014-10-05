@@ -24,8 +24,9 @@ $(document).ready(function() {
        });
     }
 
-    function setURLValueIfSaved() {
-        if (chrome.storage.sync.get('tpUrl', function(items) {
+    // Show the saved URL in options
+    function showUrlIfSaved() {
+        chrome.storage.sync.get('tpUrl', function(items) {
             if (items.tpUrl) {
 
                 // Update URL value
@@ -34,10 +35,10 @@ $(document).ready(function() {
                 // Store
                 tpUrl = items.tpUrl;
             }
-        }));
+        });
     }
 
-    setURLValueIfSaved();
+    showUrlIfSaved();
 
     $('#btn-save').on('click', function(e) {
         e.preventDefault();

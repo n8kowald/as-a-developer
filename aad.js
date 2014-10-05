@@ -11,8 +11,8 @@ var TP = (function($) {
     module.removeNoise = function() {
         $('.tau-board-unit__value').add('.ui-title__title')
             .text(function() { 
-            return $(this).text().replace(/(as a .+? I .+? to)/gi, '');
-        });
+                return $(this).text().replace(/(as a .+? I .+? to)/gi, '');
+            });
     };
     
     // Fullscreen an open TP ticket

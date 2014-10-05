@@ -4,16 +4,12 @@ $(document).ready(function() {
     var numEntry$ = $('#numpad-text-entry'),
         submit$ = $('.numpad-submit'),
         delete$ = $('.numpad-delete'),
-        tpIdLength = 6;
+        tpIdLength = 6,
+        tpBaseUrl;
 
-    $('.numpad a').on('click', function() {
-        var num = $(this).text();
-        var entry = numEntry$.val();
-        if (entry.length < tpIdLength) {
-            entry = entry + num;
-            numEntry$.val(entry);
-        }
-        setActiveState();
+    // Get base TP URL
+    chrome.storage.sync.get('tpUrl', function(items) {
+        tpBaseUrl = items.tpUrl + '/entity/';
     });
 
     // Change the colour of the GO button to indicate a full TP id has been entered
@@ -39,13 +35,14 @@ $(document).ready(function() {
         numEntry$.val('');
     }
 
+    // Doubleclick behaviour
     var delay = 190,
         clicks = 0,
         timer = null;
 
     delete$.on('click', function(e){
 
-        clicks++;  //count clicks
+        clicks++;
         if (clicks === 1) {
 
             timer = setTimeout(function() {
@@ -66,6 +63,16 @@ $(document).ready(function() {
 
         // cancel system double-click event
         e.preventDefault();
+    });
+
+    $('.numpad a').on('click', function() {
+        var num = $(this).text();
+        var entry = numEntry$.val();
+        if (entry.length < tpIdLength) {
+            entry = entry + num;
+            numEntry$.val(entry);
+        }
+        setActiveState();
     });
 
     $('#numpad-text-entry').on('keyup', function() {
@@ -116,17 +123,11 @@ $(document).ready(function() {
             $('.numpad-9').trigger('click');
         }
 
-        // Enter  opens a ticket
+        // Enter opens a ticket
         if (e.which == 13) {
             submit$.trigger('click');
         }
 
-    });
-
-    // Get base TP URL
-    var tpBaseUrl;
-    chrome.storage.sync.get('tpUrl', function(items) {
-        tpBaseUrl = items.tpUrl + '/entity/';
     });
 
     /* Send actions to background.js */
