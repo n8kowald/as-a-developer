@@ -1,8 +1,9 @@
 {
     "name": "As a developer",
-    "version": "1.2.0",
+    "short_name": "As a developer",
+    "version": "1.2.1",
     "manifest_version": 2,
-    "description": "TargetProcess ticket numpad. Grab the magic mouse and let's Scrum!",
+    "description": "TargetProcess 3 ticket numpad. Grab the magic mouse and let's Scrum!",
     "options_page": "options.html",
     "browser_action": { 
         "default_icon": "icons/icon16.png",

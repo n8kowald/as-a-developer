@@ -9,8 +9,8 @@ $(document).ready(function() {
             var savedMsg = 'Saved, thanks!',
                 updatedMsg = 'Updated, thanks!';
             
-            var msg = options.tpUrl === tpUrl ?
-                savedMsg : updatedMsg;
+            // If tpUrl doesn't exist show saved msg
+            var msg = !tpUrl ? savedMsg : updatedMsg;
 
             // Update status to let user know options were saved.
             $('#aad-status')
