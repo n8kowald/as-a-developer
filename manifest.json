@@ -1,7 +1,7 @@
 {
     "name": "As a developer",
     "short_name": "As a developer",
-    "version": "1.2.1",
+    "version": "1.2.3",
     "manifest_version": 2,
     "description": "TargetProcess 3 ticket numpad. Grab the magic mouse and let's Scrum!",
     "options_page": "options.html",
