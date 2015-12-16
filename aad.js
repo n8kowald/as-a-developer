@@ -17,7 +17,7 @@ var TP = (function($) {
     
     // Fullscreen an open TP ticket
     module.fullscreenTicket = function(tpBaseUrl) {
-        var id = $('.ui-title__info .entity-id a').text(); 
+        var id = $('.entity-id a').text(); 
         if (id.length) {
             id = id.replace('#', '');
             window.location = tpBaseUrl + id;
