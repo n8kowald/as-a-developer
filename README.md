@@ -1,8 +1,10 @@
 as-a-developer
 ==============
-
 Chrome extension for Target Process 3 that simplifies userstory finding
 and opening in a standup where users only have a mouse.
+
+# Install
+https://chrome.google.com/webstore/detail/as-a-developer/lhkopmdnccljdkcldamkpddggnomnafg
 
 TODO
 ==============

@@ -26,11 +26,24 @@ var TP = (function($) {
     
     // Open a ticket by its TPID
     module.openTicket = function(tpid, tpBaseUrl) {
-        var card$ = $('.i-role-card[data-entity-id="' + tpid + '"]');
+        var card$ = $('.i-role-card[data-entity-id="' + tpid + '"]'),
+            mainSearch$ = $('.tau-search__input.i-role-search-string.i-role-resetable-target');
         
         // Target card exists: open it
         if (card$.length) {
             card$.simulate('dblclick');
+        } else if (mainSearch$.length) {
+            // Open ticket using the main search box as that's quicker than a page refresh
+            mainSearch$.val(tpid);
+            
+            // Load IIFE script into TP website. Remove it after it has run.
+            var s = document.createElement('script');
+            s.src = chrome.extension.getURL('submit-search.js');
+            s.onload = function() {
+                this.parentNode.removeChild(this);
+            };
+            (document.head || document.documentElement).appendChild(s);
+            
         } else {
             // Card not found: go to ticket directly
             window.location = tpBaseUrl + tpid;
