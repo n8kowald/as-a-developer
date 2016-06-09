@@ -23,9 +23,20 @@ var TP = (function($) {
             window.location = tpBaseUrl + id;
         }
     };
-    
+
+    // Close open ticket
+    module.closeOpenTicket = function() {
+        var closePage$ = $('.tau-cover-view_page').find('.close');
+        if (!closePage$.length) {
+            return;
+        } 
+        closePage$.trigger('click');
+    };
+
     // Open a ticket by its TPID
     module.openTicket = function(tpid, tpBaseUrl) {
+        module.closeOpenTicket();
+        
         var card$ = $('.i-role-card[data-entity-id="' + tpid + '"]'),
             mainSearch$ = $('.tau-search__input.i-role-search-string.i-role-resetable-target');
         
