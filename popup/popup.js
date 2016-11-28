@@ -86,45 +86,14 @@ $(document).ready(function() {
 		if (e.which === 8) {
 			deleteSingleNum();
 		}
-        // 0 pressed
-        if (e.which === 48) {
-            $('.numpad-0').trigger('click');
-        }
-        // 1 pressed
-        if (e.which === 49) {
-            $('.numpad-1').trigger('click');
-        }
-        // 2 pressed
-        if (e.which === 50) {
-            $('.numpad-2').trigger('click');
-        }
-        // 3 pressed
-        if (e.which === 51) {
-            $('.numpad-3').trigger('click');
-        }
-        // 4 pressed
-        if (e.which === 52) {
-            $('.numpad-4').trigger('click');
-        }
-        // 5 pressed
-        if (e.which === 53) {
-            $('.numpad-5').trigger('click');
-        }
-        // 6 pressed
-        if (e.which === 54) {
-            $('.numpad-6').trigger('click');
-        }
-        // 7 pressed
-        if (e.which === 55) {
-            $('.numpad-7').trigger('click');
-        }
-        // 8 pressed
-        if (e.which === 56) {
-            $('.numpad-8').trigger('click');
-        }
-        // 9 pressed
-        if (e.which === 57) {
-            $('.numpad-9').trigger('click');
+
+        // 0-9 pressed
+        if (e.which === 48 || e.which === 49 || e.which === 50 ||
+            e.which === 51 ||e.which === 52 || e.which === 53 ||
+            e.which === 54 || e.which === 55 || e.which === 56 ||
+            e.which === 57
+        ) {
+           return;
         }
 
         // Enter opens a ticket
